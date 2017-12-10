@@ -8,11 +8,11 @@ const request = require('request');
 const cheerio = require('cheerio');
 module.exports = {
   
-  // _config: {
-  //   actions: false,
-  //   shortcuts: false,
-  //   rest: false
-  // },
+  _config: {
+    actions: false,
+    shortcuts: false,
+    rest: false
+  },
 
   // put_flight_data: function (req, res) {
   //   let flightData = [];
