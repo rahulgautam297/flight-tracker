@@ -39,6 +39,9 @@ module.exports = {
     arrival_coords: {
       type: 'string',
     },
+    arrival_location: {
+      type: 'string',
+    },
     // arrival_gate_time_scheduled: {
     //   type: 'string',
     // },

@@ -8,11 +8,11 @@ const request = require('request');
 const cheerio = require('cheerio');
 module.exports = {
   
-  _config: {
-    actions: false,
-    shortcuts: false,
-    rest: false
-  },
+  // _config: {
+  //   actions: false,
+  //   shortcuts: false,
+  //   rest: false
+  // },
 
   // put_flight_data: function (req, res) {
   //   let flightData = [];
@@ -67,13 +67,13 @@ module.exports = {
         let currentFlightData = $('script').get()[51].children[0].data;
         currentFlightData = JSON.parse(currentFlightData.substring(25, currentFlightData.length-1));  // to Parse as JSON.
         currentFlightData = currentFlightData.flights[Object.keys(currentFlightData.flights)[0]].activityLog.flights["0"]; // The key changes for every flight
-        sails.log.error(currentFlightData);
+
         flightData.push({
           flight_name:flight,
-          departure_cords: currentFlightData.origin.coord[1] + ',' + currentFlightData.origin.coord[0],
+          departure_coords: currentFlightData.origin.coord[1] + ',' + currentFlightData.origin.coord[0],
           departure_location: currentFlightData.origin.friendlyLocation,
           departure_takeoff_time_scheduled: currentFlightData.takeoffTimes.scheduled,
-          arrival_cords: currentFlightData.destination.coord[1] + ',' + currentFlightData.origin.coord[0],
+          arrival_coords: currentFlightData.destination.coord[1] + ',' + currentFlightData.destination.coord[0],
           arrival_location: currentFlightData.destination.friendlyLocation,
           arrival_takeoff_time_scheduled: currentFlightData.landingTimes.scheduled,
           aircraft_info: currentFlightData.aircraftTypeFriendly,
