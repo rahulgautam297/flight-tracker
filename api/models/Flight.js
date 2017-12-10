@@ -45,12 +45,12 @@ module.exports = {
     // arrival_gate_time_actual: {
     //   type: 'string',
     // },
-    // arrival_takeoff_time_scheduled: {
-    //   type: 'string',
-    // },
-    arrival_takeoff_time_actual: {
+    arrival_takeoff_time_scheduled: {
       type: 'string',
     },
+    // arrival_takeoff_time_actual: {
+    //   type: 'string',
+    // },
     // arrival_taxiing_time: {
     //   type: 'string',
     // },
