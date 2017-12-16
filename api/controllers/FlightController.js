@@ -64,7 +64,8 @@ module.exports = {
       request(`https://flightaware.com/live/flight/${flight}`, function (err, response, body) {
         if (err) { return sails.log.error(err); }
         const $ = cheerio.load(body);
-        let currentFlightData = $('script').get()[51].children[0].data;
+        let currentFlightData = $('script').get()[52].children[0].data;
+        sails.log.error(currentFlightData);
         currentFlightData = JSON.parse(currentFlightData.substring(25, currentFlightData.length-1));  // to Parse as JSON.
         currentFlightData = currentFlightData.flights[Object.keys(currentFlightData.flights)[0]].activityLog.flights["0"]; // The key changes for every flight
 
