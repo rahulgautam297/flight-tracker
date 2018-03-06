@@ -43,7 +43,7 @@ class App extends Component {
         <h3> Enter Flight </h3>
         <input type="text" name="flightName" value={this.state.text} onChange={this.handleChange} />
         <br />
-        <input type="submit" value="Submit" onClick={ this.handleSubmit } />
+        <input type="submit" value="Submit" onClick={this.handleSubmit } />
         {this.info(this.state.value)}
       </div>
     );
